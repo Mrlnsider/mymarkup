@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Danny Hotel</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="dist/js/datepicker.min.js"></script>
+	</head>
+
+	<body>
+		<!-- <div id="preloader">			
+		</div> -->
+		<div id="slider">
+    	</div>
+		<div class="reserve-open" id="hide" >
+			<div class="reserve-form" id="hide-form">
+				<div class="reserve-div">
+					<form class="reserve">
+						<button id="close" type="button"><i class="fa fa-times" aria-hidden="true"></i></button>
+						<div>
+							<p>Ваше имя <br></p>
+							<input type="text" name="name" placeholder="Даниил Медведев" class="name-email">
+						</div>
+						<div>
+							<p>Ваш E-mail<br></p>
+							<input type="email" name="email" placeholder= "Danny@ukr.net" class="name-email">
+						</div>
+						<div class="quantity">
+							<p>Количество спальных мест:</p>
+							<input type="text" name="quantity" placeholder="1"
+							value="">
+						</div>
+						<div class="check">
+							<input class="checkbox" type="checkbox" id="vip" name="vip"> <label for="vip">VIP номер:</label>
+						</div>
+						<div class="div-center">
+							<p>Цена номера: <span>750</span></p>
+						</div>
+						<div class="subm">
+							<input type="submit" value="Забронировать">
+						</div>	
+					</form>
+				</div>
+			</div>
+		</div>
+		<header id="ex1">
+			<div class="wrapper menu">
+				<div class="dh-logo">
+					<a href="index.html" class="logo">Danny <span> Hotel </span> </a>
+				</div> 
+				<button type="button" class="nav-opener"> 
+					<div id="nav-icon1">
+  						<span></span>
+  						<span></span>
+  						<span></span>
+					</div>
+				</button>
+				<div class="burger-menu">
+					<nav id="menus">
+						<ul>
+							<li><a href="#ex1">Главная</a></li>
+							<li><a href="#ex2">Цены</a></li>
+							<li><a href="#ex3">Услуги</a></li>
+							<li><a href="#ex4">Отзывы</a></li>
+						</ul>
+					</nav>
+					<div class="tel"> 
+						<img src="img/phone.png" alt="phone">
+						<div class="text" >
+							<a href="tel: +38 095 444 50 16"> +38 095 444 50 16 </a> 
+							<a href="tel: +38 097 563 50 16"> +38 097 563 50 16 </a>
+						</div>	
+					</div>
+				</div>
+			</div>	
+		</header> 	
+		<section>
+     		<div class="danny-hotel">
+     			<div class="black">
+     				<div class="welcome">
+     					<p>Welcome to</p>
+     					<h1>Danny Hotel</h1>
+     					<p id="room">Гостиничные номера от <span>750</span> грн</p>	
+     				</div>
+     			</div>
+     			<div class="datewhen">
+          			<h3>Введите даты, чтобы найти лучшие цены</h3>
+               		<form action="">
+						<div class="all-inputs">
+							<div class="inp-calender">
+								<input id="arrival" name="date-in" type="text" class="datepicker-here reserv" placeholder="Дата заезда" autocomplete="off">
+								<label for="arrival" class="first-label"><i class="fa fa-calendar-o" aria-hidden="true"></i></label>
+							</div>
+							<div class="inp-calender">
+								<input id="departure" name="date-out" type="text" class="datepicker-here reserv" placeholder="Дата выезда" autocomplete="off">
+								<label for="departure" class="second-label"><i class="fa fa-calendar-o" aria-hidden="true"></i></label>
+							</div>	
+						</div>
+						<div class="seat">
+							<button type="submit" form="booking1" id="showContent"> Проверить наличие мест</button>
+						</div>
+					</form>                 
+     			</div>
+     		</div>
+     	</section>	   			
+     	<section >
+     		<div class="wrapper container-main">
+     			<div class="traditions">
+     				<div class="room">
+     					<img src="img/sloi16.jpg" alt="Danny hotel">
+     				</div>
+     				<div class="tradition-text">
+     					<h2 class="hotel-tradition">Традиции гостеприимства и технологии</h2>
+     					<p>Отель объединяет традиции гостеприимства
+     						и высокие технологии современного отеля.
+     						Удобное местоположение в самом сердце
+     						культурного центра города, рядом с
+     						достопримечательностями, транспортной
+     						доступностью, широким спектром услуг
+     						и индивидуальным подходом к каждому клиенту делают нашу гостиницу идеальным местом для проживания деловых туристов
+     						и путешественников.
+     					</p>
+     				</div>
+     			</div>
+     			<div class="foto-room" id="ex2">
+     				<div class="foto-price price-holder">
+     					<div class="price-room">
+     						<h3>Номер на одного от <span>750</span> грн.</h3>
+     					</div>
+     					<a href="#"><img src="img/sloi17.jpg" alt="For one"></a>
+     				</div>
+     				<div class="foto-price price-holder">
+     					<div class="price-room">
+     						<h3>Номер на двоих от <span>950</span> грн.</h3>
+     					</div>
+     					<a href="#"><img src="img/sloi18.jpg" alt="For two"></a>
+     				</div>
+     				<div class="foto-price price-holder">
+     					<div class="price-room">
+     						<h3>Номер люкс <span>2500</span> грн.</h3>
+     					</div>
+     					<a href="#"><img src="img/sloi19.jpg" alt="Lux"></a>
+     				</div>
+     			</div>
+     		</div>
+     	</section>
+		<section id="ex3">
+			<div class="services">
+			<h2 class="title-services"><span>Услуги</span></h2>
+				<div class="service kitchen">
+					<div class="service-img">
+						<img src="img/sloi20.jpg" alt="kitchen">
+					</div>
+					<div class="service-text">
+						<h3>Кухня</h3>
+						<p>В отеле работает ресторан, где вы можете
+						попробывать европейскую кухню. Для всех наших клиентов  завтрак подаётся в номер <strong>бесплатно</strong>.</p>
+					</div>
+				</div>
+				<div class="service gym">
+					<div class="service-img">
+						<img src="img/sloi21.jpg" alt="gym">
+					</div>
+					<div class="service-text">
+						<h3>Тренажёрный зал</h3>
+						<p>Для всех наших клиентов <strong>бесплатно</strong> работает
+						тренажёрный зал, где вы сможете поддерживать
+						себя в форме. Время работы зала с 7:00 до 23:00.</p>
+					</div>
+				</div>
+				<div class="service wash">
+					<div class="service-img">
+						<img src="img/sloi22.jpg" alt="wash">
+					</div>
+					<div class="service-text">
+						<h3>Химчистка одежды</h3>
+						<p>У нас, для наших клиентов  работает химчистка одежды, где мы <strong>бесплатно</strong> почистим
+						Ваш костюм, пальто и т.д.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<form action="" autocomplete="off">
+			<div class="reservation">
+				<div class="calenda">
+					<input id="arrivalsec" name="date-in" type="text" class="datepicker-here reserv" placeholder="Дата заезда" autocomplete="off" >
+					<label for="arrivalsec"><i class="fa fa-calendar-o" aria-hidden="true"></i></label>
+				</div>
+				<div class="calenda">
+					<input id="departuresec" name="date-out" type="text" class="datepicker-here reserv" placeholder="Дата выезда" autocomplete="off">
+					<label for="departuresec"><i class="fa fa-calendar-o" aria-hidden="true"></i></label>
+				</div>
+				<div class="howmuch">
+					<input id="howmany" class="people" type="text" name="howmany" placeholder="1 гость">
+					<label for="howmany" class="howone">
+						<i class="fa fa-chevron-down" aria-hidden="true"></i>
+					</label>
+					<div class="guests hidden">
+						<div class="guest">
+							<span>Взрослые</span>
+							<div class="guest-how">	
+								<label for="adults">
+									<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+								</label>	
+								<input type="text" name="adults" id="adults" placeholder="1" value="1">
+								<label for="adults">
+									<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+								</label>
+							</div>
+						</div>
+						<div class="guest">
+							<span>Дети</span>
+							<div class="guest-how">
+								<label for="kids"> 
+									<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+								</label>
+								<input type="text" name="kids" id="kids" placeholder="0" value="0">
+								<label for="kids">
+									<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+								</label>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div class="seat">
+					<button type="submit" form="booking1" id="open"> Проверить наличие мест</button>
+				</div>
+			</div>
+			</form>
+		</section>
+		<section id="ex4">
+			<h2 class="coments-title">Отзывы наших клиентов</h2>
+			<div class="coments-content">
+				<div class="coments">
+					<p class="coment hidden">
+						Отель явно является лучшим в городе!!! Если Вы проголодались - то тут вас точно смогут удовлетворить! Терраса и Скай-лаунж могут легко порадовать гурманов! А завтраки - на высшем уровне!
+					</p>
+					<p class="coment">
+						Превосходный отель с зарекомендованным качеством во всех направлениях. Просторные номера, удобные матрасы, приятные служащие гостиницы, замечательные завтраки с огромным выбором и наличием свежих продуктов!
+					</p>
+					<p class="coment hidden">
+						Хороший отель с высоким уровнем сервиса, прекрасное место расположения. Качественная мебель, идеальное постельное белье. Большая ванная комната. Есть напольные весы, халаты, тапочки, электрочайник.
+					</p>
+				</div>
+				<div class="users-photos">
+					<div>
+						<img src="img/people1.png" alt="user1" class="photo small">
+					</div>
+					<div>
+						<img src="img/people2.png" alt="user2" class="photo small big">
+					</div>
+					<div>
+						<img src="img/people3.png" alt="user3" class="photo small">
+					</div>
+					<div class="range"></div>
+				</div>
+				<div class="user-info">
+					<div>
+						<p class="info hidde">Евгения Самбирова<br><span>г. Донецк</span></p>
+					</div>
+					<div>
+						<p class="info">Даниил Медведев<br><span>г. Харьков</span></p>
+					</div>
+					<div>
+						<p class="info hidde">Артем Акуленко<br><span>г. Одесса</span></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="adress">
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.0476774904414!2d36.22583577755457!3d50.01046157812185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a12100542a0f%3A0xf7fdf79146c6092c!2z0L_RgNC-0YHQv9C10LrRgiDQndCw0YPQutC4LCA4LCDQpdCw0YDQutGW0LIsINCl0LDRgNC60ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA2MTAwMA!5e0!3m2!1sru!2sua!4v1534068329977" width="100%" height="400"  frameborder="0"  allowfullscreen></iframe>
+				</div>
+				<div class="coordinates">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<p>Украина,<br> г. Харьков, <br> пр. Науки, 8
+					</p>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="itsfooter wrapper">
+				<a href="index.html" class="logo">Danny <span>Hotel</span></a>					
+				<div>
+					<p>Украина, <br> г. Харьков, <br> пр. Науки, 8
+					</p>
+				</div>
+				<div class="phone-mail">
+					<a href="tel: +38 095 444 50 16">+38 095 444 50 16</a></br>
+     				<a href="tel: +38 097 563 50 16">+38 097 563 50 16</a> </br>
+     				<a href="mailto:info@asotel.com.ua">info@asotel.com.ua</a>
+				</div>		
+				<div class="social">
+					<a href="http://vk.com" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+					<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</footer>
+		<script src = "js/script.js"></script>
+	</body>
+
+</html>
