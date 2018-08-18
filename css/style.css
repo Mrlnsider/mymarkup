@@ -74,6 +74,7 @@ body {
 	transition: 1s;
 	outline: none;
  	opacity: 0.4;
+ 	z-index: 1;
 }
 #slider button:hover { 
 	opacity: 1;
