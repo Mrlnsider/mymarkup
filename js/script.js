@@ -77,10 +77,12 @@ const Slide = function ( imageURL, container ) {
     elem.className = "slide"
     elem.style = `
         position: absolute;
-        max-width: 1280px;
-        margin: auto;
+        max-width: 1280px;  
         top: 0px;
         bottom: 0px;
+        left: 0;
+        right: 0;
+        margin: auto;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: top;
