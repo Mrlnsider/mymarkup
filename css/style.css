@@ -83,6 +83,9 @@ body {
 #slider figure {
 	height: 550px;
 }
+#slider .slide {
+	width: 100%;
+}
 #hide {
 	display: none;
 }
@@ -876,6 +879,10 @@ footer {
 	#slider button {
 		display: none;
 	}
+	#slider .slide {
+		left: 0;
+		width: 100%;
+	}	
 	.danny-hotel {
 		width: 100%;
 	}
@@ -1023,6 +1030,9 @@ footer {
 @media screen and (max-width: 480px) {
 	#slider figure {
 		height: 280px;
+	}
+	.danny-hotel .black {
+		height: 210px;
 	}
 	.burger-menu {
 		width: 100%;
