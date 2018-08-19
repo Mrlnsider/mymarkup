@@ -77,6 +77,8 @@ const Slide = function ( imageURL, container ) {
     elem.className = "slide"
     elem.style = `
         position: absolute;
+        max-width: 1280px;
+        margin: auto;
         top: 0px;
         bottom: 0px;
         background-repeat: no-repeat;
@@ -93,7 +95,7 @@ const Slide = function ( imageURL, container ) {
             elem.style.backgroundImage = `url(${pictureURL})`
     }
     this.mcFromTo = function ( from, to, finalOpacity ) {
-        var slideWidth = window.innerWidth * 0.8
+        var slideWidth = window.innerWidth * 1
         elem.style.transition = 'none'
         elem.style.left = from + '%'
         elem.style.opacity = 1 - finalOpacity
@@ -131,8 +133,8 @@ const Slider = function ( sourseData ) {
       var nextIndex = this.getNextIndex ( direction )
       this.slides [ nextSlide ].setPicture ( this.pictures [ nextIndex ] )
       this.slides [ nextSlide ].init ( -to )
-      this.slides [ currentSlide ].mcFromTo ( 10, to, 0 )
-      this.slides [ nextSlide ].mcFromTo ( -to, 10, 1 )
+      this.slides [ currentSlide ].mcFromTo ( 0, to, 0 )
+      this.slides [ nextSlide ].mcFromTo ( -to, 0, 1 )
       setTimeout ( function () {
           currentSlide = nextSlide
           currentIndex = nextIndex
@@ -166,7 +168,7 @@ Slider.prototype.loadData = async function ( jsonURL ) {
                         this.pictures [ 0 ],
                         this.container
         )
-        this.slides [ 0 ].mcFromTo ( 100, 10 )
+        this.slides [ 0 ].mcFromTo ( 100, 0 )
         this.slides [ 1 ] = new Slide (
                         this.pictures [ 1 ],
                         this.container

@@ -83,9 +83,9 @@ body {
 #slider figure {
 	height: 550px;
 }
-#slider .slide {
+/* #slider .slide {
 	width: 100%;
-}
+} */
 #hide {
 	display: none;
 }
@@ -879,10 +879,10 @@ footer {
 	#slider button {
 		display: none;
 	}
-	#slider .slide {
-		left: 0;
-		width: 100%;
-	}	
+	/* #slider .slide {
+			left: 0;
+			width: 100%;
+		} */	
 	.danny-hotel {
 		width: 100%;
 	}
