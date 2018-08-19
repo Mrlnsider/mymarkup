@@ -73,11 +73,11 @@ var hidef = document.getElementById('hide-form')
 //my slider
 const Slide = function ( imageURL, container ) {
     this.imageURL = imageURL
-    let elem = container.appendChild (document.createElement ( 'div' ))
-    elem.className = "slide"
-    elem.style = `
+    this. elem = container.appendChild (document.createElement ( 'div' ))
+    this.elem.className = "slide"
+    this.elem.style = `
         position: absolute;
-        max-width: 1280px;  
+         
         top: 0px;
         bottom: 0px;
         left: 0;
@@ -89,12 +89,12 @@ const Slide = function ( imageURL, container ) {
         transition: all 0.8s;
         background-image: url(${imageURL});
     `
-    this.btnFirst = this.createElem ( 'button', elem )
+    this.btnFirst = this.createElem ( 'button', this.elem )
     this.btnFirst.className = "change"
     this.btnFirst.style = `margin-right: 10px`
-    this.btnSecond = this.createElem ( 'button', elem )
+    this.btnSecond = this.createElem ( 'button', this.elem )
     this.btnSecond.className = "change"
-    this.btnThird = this.createElem ( 'button', elem )
+    this.btnThird = this.createElem ( 'button', this.elem )
     this.btnThird.className = "change"
     this.btnFirst.style = `margin-left: 10px`
     this.btnFirst.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
