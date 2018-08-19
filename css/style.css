@@ -80,6 +80,18 @@ body {
 	opacity: 1;
 	cursor: pointer;
 }
+#slider .change {
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 28px;
+	outline: none;
+ 	z-index: 20;
+ 	color: blue;
+ 	opacity: 1;
+}
 #slider figure {
 	height: 550px;
 }
@@ -875,6 +887,9 @@ footer {
 	}
 	#slider button {
 		display: none;
+	}
+	#slider .change {
+		display: inline-block;
 	}	
 	.danny-hotel {
 		width: 100%;

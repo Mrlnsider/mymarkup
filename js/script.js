@@ -89,6 +89,18 @@ const Slide = function ( imageURL, container ) {
         transition: all 0.8s;
         background-image: url(${imageURL});
     `
+    this.btnFirst = this.createElem ( 'button', elem )
+    this.btnFirst.className = "change"
+    this.btnFirst.style = `margin-right: 10px`
+    this.btnSecond = this.createElem ( 'button', elem )
+    this.btnSecond.className = "change"
+    this.btnThird = this.createElem ( 'button', elem )
+    this.btnThird.className = "change"
+    this.btnFirst.style = `margin-left: 10px`
+    this.btnFirst.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
+    this.btnSecond.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+    this.btnThird.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+    
     this.init = function ( x ) {
       elem.style.left = x + '%'
       elem.style.width = window.innerWidth * 0.8 + 'px'
