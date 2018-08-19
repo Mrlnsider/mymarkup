@@ -73,11 +73,10 @@ var hidef = document.getElementById('hide-form')
 //my slider
 const Slide = function ( imageURL, container ) {
     this.imageURL = imageURL
-    this. elem = container.appendChild (document.createElement ( 'div' ))
-    this.elem.className = "slide"
-    this.elem.style = `
+    let elem = container.appendChild (document.createElement ( 'div' ))
+    elem.className = "slide"
+    elem.style = `
         position: absolute;
-         
         top: 0px;
         bottom: 0px;
         left: 0;
@@ -89,18 +88,6 @@ const Slide = function ( imageURL, container ) {
         transition: all 0.8s;
         background-image: url(${imageURL});
     `
-    this.btnFirst = this.createElem ( 'button', this.elem )
-    this.btnFirst.className = "change"
-    this.btnFirst.style = `margin-right: 10px`
-    this.btnSecond = this.createElem ( 'button', this.elem )
-    this.btnSecond.className = "change"
-    this.btnThird = this.createElem ( 'button', this.elem )
-    this.btnThird.className = "change"
-    this.btnFirst.style = `margin-left: 10px`
-    this.btnFirst.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
-    this.btnSecond.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
-    this.btnThird.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
-    
     this.init = function ( x ) {
       elem.style.left = x + '%'
       elem.style.width = window.innerWidth * 0.8 + 'px'
@@ -109,7 +96,7 @@ const Slide = function ( imageURL, container ) {
             elem.style.backgroundImage = `url(${pictureURL})`
     }
     this.mcFromTo = function ( from, to, finalOpacity ) {
-        var slideWidth = window.innerWidth * 1
+        var slideWidth = window.innerWidth * 0.8
         elem.style.transition = 'none'
         elem.style.left = from + '%'
         elem.style.opacity = 1 - finalOpacity
@@ -121,11 +108,6 @@ const Slide = function ( imageURL, container ) {
         }, 50 )
     }
 }
-Slide.prototype.createElem = function ( tagName, container ) {
-        return  ( !container ? document.body : container )
-                .appendChild (
-                  document.createElement ( tagName )
-                )}
 const Slider = function ( sourseData ) {
     this.pictures = []
     var slid = document.getElementById ("slider")
@@ -152,8 +134,8 @@ const Slider = function ( sourseData ) {
       var nextIndex = this.getNextIndex ( direction )
       this.slides [ nextSlide ].setPicture ( this.pictures [ nextIndex ] )
       this.slides [ nextSlide ].init ( -to )
-      this.slides [ currentSlide ].mcFromTo ( 0, to, 0 )
-      this.slides [ nextSlide ].mcFromTo ( -to, 0, 1 )
+      this.slides [ currentSlide ].mcFromTo ( 10, to, 0 )
+      this.slides [ nextSlide ].mcFromTo ( -to, 10, 1 )
       setTimeout ( function () {
           currentSlide = nextSlide
           currentIndex = nextIndex
@@ -187,7 +169,7 @@ Slider.prototype.loadData = async function ( jsonURL ) {
                         this.pictures [ 0 ],
                         this.container
         )
-        this.slides [ 0 ].mcFromTo ( 100, 0 )
+        this.slides [ 0 ].mcFromTo ( 100, 10 )
         this.slides [ 1 ] = new Slide (
                         this.pictures [ 1 ],
                         this.container
