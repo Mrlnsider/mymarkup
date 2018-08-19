@@ -121,6 +121,11 @@ const Slide = function ( imageURL, container ) {
         }, 50 )
     }
 }
+Slide.prototype.createElem = function ( tagName, container ) {
+        return  ( !container ? document.body : container )
+                .appendChild (
+                  document.createElement ( tagName )
+                )}
 const Slider = function ( sourseData ) {
     this.pictures = []
     var slid = document.getElementById ("slider")
