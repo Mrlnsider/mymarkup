@@ -1,25 +1,25 @@
 // my preloader
 var hellopreloader = document.getElementById("preloader");
 function fadeOutnojquery(el) {
-	el.style.opacity = '1'
-	el.style.transition = 'all 0.5s'
-	var interhellopreloader = setInterval ( function() {
-		el.style.opacity = el.style.opacity - 0.1;
-		if (el.style.opacity <=0.1) {
-			clearInterval(interhellopreloader);
-			hellopreloader.style.opacity = "0";
-		}
-		setTimeout ( function() {
-			if (hellopreloader.style.opacity == 0) {
-				hellopreloader.style.display = "none"
-			}
-		},1000)
-	},16);
+    el.style.opacity = '1'
+    el.style.transition = 'all 0.5s'
+    var interhellopreloader = setInterval ( function() {
+        el.style.opacity = el.style.opacity - 0.1;
+        if (el.style.opacity <=0.1) {
+            clearInterval(interhellopreloader);
+            hellopreloader.style.opacity = "0";
+        }
+        setTimeout ( function() {
+            if (hellopreloader.style.opacity == 0) {
+                hellopreloader.style.display = "none"
+            }
+        },1000)
+    },16);
 }
 window.onload = function() {
-	setTimeout ( function() {
-		fadeOutnojquery(hellopreloader);
-	},1000);
+    setTimeout ( function() {
+        fadeOutnojquery(hellopreloader);
+    },1000);
 };
 
 // jquery scroll
@@ -77,6 +77,7 @@ const Slide = function ( imageURL, container ) {
     elem.className = "slide"
     elem.style = `
         position: absolute;
+        max-width: 1280px;  
         top: 0px;
         bottom: 0px;
         left: 0;
@@ -96,7 +97,7 @@ const Slide = function ( imageURL, container ) {
             elem.style.backgroundImage = `url(${pictureURL})`
     }
     this.mcFromTo = function ( from, to, finalOpacity ) {
-        var slideWidth = window.innerWidth * 0.8
+        var slideWidth = window.innerWidth * 1
         elem.style.transition = 'none'
         elem.style.left = from + '%'
         elem.style.opacity = 1 - finalOpacity
@@ -134,8 +135,8 @@ const Slider = function ( sourseData ) {
       var nextIndex = this.getNextIndex ( direction )
       this.slides [ nextSlide ].setPicture ( this.pictures [ nextIndex ] )
       this.slides [ nextSlide ].init ( -to )
-      this.slides [ currentSlide ].mcFromTo ( 10, to, 0 )
-      this.slides [ nextSlide ].mcFromTo ( -to, 10, 1 )
+      this.slides [ currentSlide ].mcFromTo ( 0, to, 0 )
+      this.slides [ nextSlide ].mcFromTo ( -to, 0, 1 )
       setTimeout ( function () {
           currentSlide = nextSlide
           currentIndex = nextIndex
@@ -169,7 +170,7 @@ Slider.prototype.loadData = async function ( jsonURL ) {
                         this.pictures [ 0 ],
                         this.container
         )
-        this.slides [ 0 ].mcFromTo ( 100, 10 )
+        this.slides [ 0 ].mcFromTo ( 100, 0 )
         this.slides [ 1 ] = new Slide (
                         this.pictures [ 1 ],
                         this.container
@@ -232,7 +233,3 @@ photo[2].onclick = function(event) {
     photo[1].classList.remove("big")
     photo[2].classList.add("big")
 }
-
-// no scroll
-
-         
