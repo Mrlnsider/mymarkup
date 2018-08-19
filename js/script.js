@@ -114,7 +114,6 @@ const Slider = function ( sourseData ) {
         top: 0px;
         left: 0px;
         right: 0px;
-        height: 550px;
         overflow: hidden;
         margin: 0px;
     `

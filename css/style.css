@@ -80,6 +80,9 @@ body {
 	opacity: 1;
 	cursor: pointer;
 }
+#slider figure {
+	height: 550px;
+}
 #hide {
 	display: none;
 }
@@ -870,6 +873,12 @@ footer {
 	#slider figure div {
 		width: 100%;
 	}
+	#slider button {
+		display: none;
+	}
+	.danny-hotel {
+		width: 100%;
+	}
 	.danny-hotel .black {
 		height: 330px;
 	}
@@ -1012,6 +1021,9 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+	#slider figure {
+		height: 280px;
+	}
 	.burger-menu {
 		width: 100%;
 	}
