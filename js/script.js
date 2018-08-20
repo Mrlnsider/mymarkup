@@ -142,10 +142,24 @@ const Slider = function ( sourseData ) {
           currentIndex = nextIndex
       }, 1000 )
     }
+    this.getFirstPicture = ()=> { 
+      if (currentIndex === 1) this.changePicture("left")
+      if (currentIndex === 2) this.changePicture("right")
+     }
+    this.getSecondPicture = () => { 
+      if (currentIndex === 0) this.changePicture("right")
+      if (currentIndex === 2) this.changePicture("left")
+     }
+     this.getThirdPicture = () => { 
+      if (currentIndex === 0) this.changePicture("left")
+      if (currentIndex === 1) this.changePicture("right")
+     }
     this.btnLeft = this.createElem ( 'button', this.container )
     this.btnLeft.onclick = () => this.changePicture ( "left" )
+    this.btnLeft.className = "change-rl"
     this.btnRight = this.createElem ( 'button', this.container )
     this.btnRight.onclick = () => this.changePicture ( "right" )
+    this.btnRight.className = "change-rl"
     this.btnLeft.innerHTML = '<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>'
     this.btnRight.innerHTML = '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>'
     this.btnLeft.style = `
@@ -154,6 +168,45 @@ const Slider = function ( sourseData ) {
     this.btnRight.style = `
         right: 15%;
     `
+    this.btnDiv = this.createElem ('div', this.container)
+    this.btnDiv.className = "btn-div"
+    this.btnFirst = this.createElem ('button', this.btnDiv)
+    this.btnFirst.className = "change"
+    this.btnFirst.style = `margin-right: 10px`
+    this.firtsI = this.createElem ('i', this.btnFirst)
+    //this.firtsI.className = "fa"
+    this.btnSecond = this.createElem ('button', this.btnDiv)
+    this.btnSecond.className = "change"
+    this.btnSecond.style = `margin-left: 10px`
+    this.secondI = this.createElem ('i', this.btnSecond)
+    //this.secondI.className = "fa" 
+    this.btnThird = this.createElem ('button', this.btnDiv)
+    this.btnThird.className = "change"
+    this.btnThird.style = `margin-left: 20px`
+    this.thirdI = this.createElem ('i', this.btnThird)
+    //this.thirdI.className = "fa"
+    this.allBtn = document.getElementsByClassName('change')
+    this.btnFirst.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
+    this.btnSecond.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+    this.btnThird.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+    this.btnFirst.onclick = () =>  {
+      this.getFirstPicture ()
+      this.btnFirst.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
+      this.btnSecond.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+      this.btnThird.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+    }
+    this.btnSecond.onclick = () => {
+      this.getSecondPicture  ()
+      this.btnFirst.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+      this.btnSecond.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
+      this.btnThird.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+    }
+    this.btnThird.onclick = () => {
+      this.getThirdPicture ()
+      this.btnFirst.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+      this.btnSecond.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
+      this.btnThird.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
+    }
 }
 Slider.prototype.createElem = function ( tagName, container ) {
         return  ( !container ? document.body : container )
