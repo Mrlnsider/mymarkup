@@ -161,11 +161,11 @@ button {
 }
 .reserve-div input {
 	font-family: Roboto, sans-serif;
+	font-size: 18px;
 }
 .reserve-div .name-email {
 	width: 100%;
 	height: 50px;
-	font-size: 18px;
 	text-indent: 20px;
 	border: 1px solid #000;
 	border-radius: 6px;
@@ -191,7 +191,6 @@ button {
 .reserve-div .quantity input {
 	width: 80px;
 	height: 40px;
-	font-size: 18px;
 	text-align: center;
 	border: 1px solid #000;
 	border-radius: 6px;
@@ -249,7 +248,6 @@ button {
 	width: 100%;
 	height: 50px;
 	font-family: RobotoMedium, sans-serif;
-	font-size: 18px;
 	border: none;
 	border-radius: 6px;
 	background: #f3bf33;
@@ -272,10 +270,6 @@ header {
 }
 .menu {
 	font-family: HelveticaNeueCyr, sans-serif;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -520,19 +514,15 @@ h3 {
 	color: #ffffff;
 }
 .price-room h3 {
-	font-family: Roboto;
+	font-family: RobotoMedium;
 	font-size: 18px;
 	text-transform: none;
 	position: absolute;
 	color: #fff;
-	font-weight: 500;
 	width: 100%;
   	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
-}
-.price-room span {
-	font-weight: 700;
 }
 h2 {
 	font-family: PlayfairDisplay, sans-serif;
@@ -567,9 +557,6 @@ h2 {
 .service-img img {
 	width: 100%;
 }
-/* .service-text {
-    flex: 0 1 430px;
-} */
 .service-text p {
 	font-family: Roboto;
 	color: #737379;
@@ -596,14 +583,14 @@ h2 {
 	width: 240px;
 	height: 50px;
 	border: 1px solid #f3bf33;
-	text-indent: 20px;
+	text-indent: 10px;
 	border-right: none;
 }
 .reservation input[type="text"] {
 	font-family: Roboto;
 	font-size: 18px;
 }
-.calenda input, .howmuch input {
+.calenda input {
 	transition: 0s;
 }
 .reservation .seat button {
@@ -613,9 +600,8 @@ h2 {
 }
 .reservation label {
 	position: absolute;
-	right: 15px;
+	right: 10px;
 	bottom: 10px;
-	z-index: 3;
 	transition: 0s;
 	color: #f3bf33;
 	font-size: 24px;
@@ -623,74 +609,71 @@ h2 {
 .reservation label:hover {
 	cursor: pointer;
 }
-.howmuch .howone {
-	transition: -webkit-transform .5s;
-    -webkit-transition: -webkit-transform .5s;
-    -o-transition: transform .5s;
-}
-.people:focus ~ .hidden {
-	display: inline-block;
-}
-.people:focus ~ .howone {
-	transform: rotate(-180deg);
-	-webkit-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    transform-origin: 50%;
-    -webkit-transform-origin: 50%;
-    -ms-transform-origin: 50%;
-    color: #f39900;
-}
-.people:focus {
-	border: 2px solid #f39900;
-}
-.reservation .howmuch {
-	position: relative;
-}
 .reservation .guests {
-	position: absolute;
-}
-.hidden {
-	display: none;
-}
-.guests {
-	font-family: Roboto;
-    font-size: 14px;
-    color: #737379;
-	width: 240px;
-	margin: auto;
-	padding: 10px;
-	border: 1px solid  #f3bf33;
-	border-top: none;
-}
-.guests input{
-	text-align: center;
-	width: 30px;
-	height: 20px;
-	border: 1px solid #f3bf33;
-	text-indent: 0px;
-	border: none;
-}
-.guests .guest {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.guest:first-child {
-	margin-bottom: 10px;
-}
-.guest-how {
-	flex: 0 1 80px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.guest-how label {
 	position: relative;
-	right: 0;
-	bottom: 0;
+	width: 240px;
+	height: 50px;
+	border: 1px solid #f3bf33;
+	color: #737379;
 	font-size: 18px;
-	color: #f3bf33;
+	cursor: pointer;
+	padding: 0 10px 0 10px;
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
 }
+
+.guests-show {
+	width: 100%;
+}
+.guests-show i {
+	float: right;
+	color: #f3bf33;
+	font-size: 24px;
+}
+.guest-total {
+	margin-top: 20px;
+	line-height: 1.5;
+}
+.drop {
+	font-size: 14px;
+	position: absolute;
+	top: 100%;
+	left: -1px;
+    right: -1px;
+	width: 240px;
+	padding: 10px 35px 10px 10px;
+	border: 1px solid #f3bf33;
+	border-top: none;
+	cursor: default;
+}
+.drop i {
+	color: #f3bf33;
+	font-size: 16px;
+}
+.drop i:hover {
+	cursor: pointer;
+}
+#first-left, #second-left {
+	opacity: 0.5;
+}
+.guests .drop input {
+	font-size: 16px;
+	width: 40px;
+	height: 20px;
+	border: none;
+	text-indent: 15px;
+}
+.drop-item:first-child {
+	margin-bottom: 5px;
+}
+.drop-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
 .coments-title {
 	text-align: center;
     color: #fff;  
@@ -718,6 +701,9 @@ h2 {
 	top: 50%;
   	left: 50%;
   	transform: translate(-50%, -50%);
+}
+.hidden {
+	display: none;
 }
 .coments-content .users-photos {
 	position: relative;
@@ -982,7 +968,6 @@ footer {
 	#nav-icon1 span:nth-child(1) {
 		top: 0px;
 	}
-
 	#nav-icon1 span:nth-child(2) {
 		top: 12px;
 	}
@@ -1045,28 +1030,45 @@ footer {
 		margin: auto;
 	}
 	.reservation {
-		/* display: inline-block; */
-		margin-bottom: 50px;
+		width: 100%;
+		max-width: 400px;
+		margin-bottom: 40px;
+	}
+	.reservation .calenda {
+		width: 100%;
 	}
 	.reservation input {
-		width: 200px;
-		margin-right: 10px;
+		width: 100%;
 		margin-bottom: 20px;
 		border: 1px solid #f3bf33;
 	}
-	.reservation input[type="text"] {
-		font-size: 14px;
+	.reservation .calenda input {
+		font-size: 16px;
 	}
 	.reservation label {
-		right: 18px;
+		right: 12px;
 		top: 12px;
-		font-size: 22px;
 	}
-	.reservation .seat button {
-		/* font-size: 14px; */
-		width: 200px;
+	.reservation .guests {
+		width: 100%;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+	.drop {
+		width: 100.6%;
+		padding: 10px;
+	}
+	.guests .drop input {
+		width: 15px;
+		text-indent: 4px;
+		margin-bottom: 0px;
+	}
+	.seat.second {
+		width: 100%;
+	}
+	.seat.second button {
+		width: 100%;
 		height: 50px;
-		margin-right: 10px;
 	}
 	.coments-content .coments {
 		font-size: 18px;
@@ -1118,6 +1120,21 @@ footer {
 	}
 	#slider figure {
 		height: 300px;
+	}
+	.reserve-div {
+		width: 90%;
+		font-size: 16px;
+	}
+	.reserve-div input {
+		font-size: 16px;
+	}
+	.check label:before {
+		top: -5px;
+		left: 90px;
+	}
+	.check label:after {
+		left: 90px;
+		top: -3px;
 	}
 	.logo {
 		font-size: 20px;

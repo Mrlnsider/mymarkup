@@ -50,7 +50,7 @@ $(document).ready(function(){
     });
 });
 
- //my reserve-open
+ //my hidden window
 var hidden = document.getElementById("hide")
 var show = document.getElementById('showContent')
 var open = document.getElementById('open')
@@ -174,17 +174,14 @@ const Slider = function ( sourseData ) {
     this.btnFirst.className = "change"
     this.btnFirst.style = `margin-right: 10px`
     this.firtsI = this.createElem ('i', this.btnFirst)
-    //this.firtsI.className = "fa"
     this.btnSecond = this.createElem ('button', this.btnDiv)
     this.btnSecond.className = "change"
     this.btnSecond.style = `margin-left: 10px`
     this.secondI = this.createElem ('i', this.btnSecond)
-    //this.secondI.className = "fa" 
     this.btnThird = this.createElem ('button', this.btnDiv)
     this.btnThird.className = "change"
     this.btnThird.style = `margin-left: 20px`
     this.thirdI = this.createElem ('i', this.btnThird)
-    //this.thirdI.className = "fa"
     this.allBtn = document.getElementsByClassName('change')
     this.btnFirst.innerHTML = '<i class="fa fa-circle-o" aria-hidden="true"></i>'
     this.btnSecond.innerHTML = '<i class="fa fa-circle" aria-hidden="true"></i>'
@@ -232,6 +229,94 @@ Slider.prototype.loadData = async function ( jsonURL ) {
 
 }
 var slider = new Slider ( 'pictures.json' )
+
+//my guests
+var guestsShow = document.getElementById ("guest")
+var drop = document.getElementById ("drop-window")
+var reserveInp = document.querySelector (".second")
+var icon = document.querySelector ("#icon")
+guestsShow.onclick = function(event) {
+    if (window.innerWidth < 768) 
+        reserveInp.style.marginTop = "70px"
+        reserveInp.style.transition = "0s"
+        icon.style = `transform: rotate(180deg)`
+    if(!drop.classList.contains("hidden")) {
+        drop.classList.add("hidden")
+        reserveInp.style.marginTop = "0px"
+        icon.style = `transform: rotate(360deg)`
+    }
+    else drop.classList.remove("hidden")
+}
+var fl = document.querySelector ("#first-left")
+var fr = document.querySelector ("#first-right")
+var sl = document.querySelector ("#second-left")
+var sr = document.querySelector ("#second-right")
+var fi = document.querySelector ("#first-input")
+var si = document.querySelector ("#second-input")
+var gn = document.querySelector (".guest-number")
+var gt = document.querySelector (".guest-text")
+var quantity = document.querySelector ("#quantityinp")
+gn.innerHTML = 1
+gt.innerHTML = "гость"
+function changeGuest () {
+    if ( Number(fi.value) + Number(si.value) > 1)
+        gt.innerHTML = gt.innerHTML.replace ( "гость", "гостя" )
+    if ( Number(fi.value) + Number(si.value) > 4 )
+        gt.innerHTML = gt.innerHTML.replace ( "гостя", "гостей" )
+    if ( Number(fi.value) + Number(si.value) < 5 )
+        gt.innerHTML = gt.innerHTML.replace ( "гостей", "гостя" )
+    if ( Number(fi.value) + Number(si.value) < 2 ) 
+        gt.innerHTML = gt.innerHTML.replace ( "гостя", "гость" )
+}
+fl.onclick = function(event) {
+    fi.value = Number(fi.value) - 1
+    if(fi.value < 1) 
+        fi.value = 1
+    if (fi.value > 1) {
+        fr.style.opacity = "1"
+    }
+    if (fi.value < 2)
+        fl.style.opacity = ".5"
+    gn.innerHTML = Number(fi.value) + Number(si.value)
+    quantity.value = gn.innerHTML
+    changeGuest ()
+}
+fr.onclick = function(event) {
+    fi.value = Number(fi.value) + 1
+    if(fi.value > 9) 
+        fi.value = 9
+    if (fi.value > 1)
+        fl.style.opacity = "1"
+    if (fi.value > 8)
+        fr.style.opacity = ".5"
+    gn.innerHTML= Number(fi.value) + Number(si.value)
+    quantity.value = gn.innerHTML
+    changeGuest ()
+}
+sl.onclick = function(event) {
+    si.value = Number(si.value) - 1
+    if(si.value < 0) 
+        si.value = 0
+    if (si.value > 0)
+        sr.style.opacity = "1"
+    if (si.value < 1)
+        sl.style.opacity = ".5"
+    gn.innerHTML= Number(fi.value) + Number(si.value)
+    quantity.value = gn.innerHTML
+    changeGuest ()
+}
+sr.onclick = function(event) {
+    si.value = Number(si.value) + 1
+    if(si.value > 5) 
+        si.value = 5
+    if (si.value > 0)
+        sl.style.opacity = "1"
+    if (si.value > 4)
+        sr.style.opacity = ".5"
+    gn.innerHTML= Number(fi.value) + Number(si.value)
+    quantity.value = gn.innerHTML
+    changeGuest ()
+}
 
 //comments 
 var photo = document.getElementsByClassName('photo')

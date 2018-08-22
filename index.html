@@ -20,7 +20,7 @@
 		<div class="reserve-open" id="hide" >
 			<div class="reserve-form" id="hide-form">
 				<div class="reserve-div">
-					<form class="reserve">
+					<form action="index.html" class="reserve">
 						<button id="close" type="button"><i class="fa fa-times" aria-hidden="true"></i></button>
 						<div>
 							<p>Ваше имя <br></p>
@@ -32,7 +32,7 @@
 						</div>
 						<div class="quantity">
 							<p>Количество спальных мест:</p>
-							<input type="text" name="quantity" placeholder="1"
+							<input type="text" name="quantity" id="quantityinp" placeholder="1"
 							value="">
 						</div>
 						<div class="check">
@@ -90,7 +90,7 @@
      			</div>
      			<div class="datewhen">
           			<h3>Введите даты, чтобы найти лучшие цены</h3>
-               		<form action="">
+               		<form action="reserve">
 						<div class="all-inputs">
 							<div class="inp-calender">
 								<input id="arrival" name="date-in" type="text" class="datepicker-here reserv" placeholder="Дата заезда" autocomplete="off">
@@ -130,19 +130,19 @@
      			<div class="foto-room" id="ex2">
      				<div class="foto-price price-holder">
      					<div class="price-room">
-     						<h3>Номер на одного от <span>750</span> грн.</h3>
+     						<h3>Номер на одного от <strong>750</strong> грн.</h3>
      					</div>
      					<a href="#"><img src="img/sloi17.jpg" alt="For one"></a>
      				</div>
      				<div class="foto-price price-holder">
      					<div class="price-room">
-     						<h3>Номер на двоих от <span>950</span> грн.</h3>
+     						<h3>Номер на двоих от <strong>950</strong> грн.</h3>
      					</div>
      					<a href="#"><img src="img/sloi18.jpg" alt="For two"></a>
      				</div>
      				<div class="foto-price price-holder">
      					<div class="price-room">
-     						<h3>Номер люкс <span>2500</span> грн.</h3>
+     						<h3>Номер люкс <strong>2500</strong> грн.</h3>
      					</div>
      					<a href="#"><img src="img/sloi19.jpg" alt="Lux"></a>
      				</div>
@@ -185,9 +185,9 @@
 				</div>
 			</div>
 		</section>
-		<section>
-			<form action="" autocomplete="off" id="second-form">
-			<div class="reservation">
+		<section class="container-main">
+			<form action="reserve" autocomplete="off" id="second-form">
+			<div class="reservation" onselectstart="return false">
 				<div class="calenda">
 					<input id="arrivalsec" name="date-in" type="text" class="datepicker-here reserv" placeholder="Дата заезда" autocomplete="off" >
 					<label for="arrivalsec"><i class="fa fa-calendar-o" aria-hidden="true"></i></label>
@@ -196,35 +196,27 @@
 					<input id="departuresec" name="date-out" type="text" class="datepicker-here reserv" placeholder="Дата выезда" autocomplete="off">
 					<label for="departuresec"><i class="fa fa-calendar-o" aria-hidden="true"></i></label>
 				</div>
-				<div class="howmuch">
-					<input id="howmany" class="people" type="text" name="howmany" placeholder="1 гость">
-					<label for="howmany" class="howone">
-						<i class="fa fa-chevron-down" aria-hidden="true"></i>
-					</label>
-					<div class="guests hidden">
-						<div class="guest">
-							<span>Взрослые</span>
-							<div class="guest-how">	
-								<label for="adults">
-									<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-								</label>	
-								<input type="text" name="adults" id="adults" placeholder="1" value="1">
-								<label for="adults">
-									<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-								</label>
+				<div class="guests">
+					<div class="guests-show" id="guest">
+						<span class="guest-total"><span class="guest-number"></span>&nbsp<span class="guest-text"></span></span>
+						<i class="fa fa-chevron-down" id="icon" aria-hidden="true"></i>
+					</div>	
+					<div class="drop hidden" id="drop-window"  >
+						<div class="drop-item">
+							<span class="drop-label">Взрослые</span>
+							<div class="spinner">
+								<i id="first-left" class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+								<input type="text" id="first-input" name="adult" value="1" max="10" min="1" readonly="">
+								<i id="first-right" class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 							</div>
 						</div>
-						<div class="guest">
-							<span>Дети</span>
-							<div class="guest-how">
-								<label for="kids"> 
-									<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-								</label>
-								<input type="text" name="kids" id="kids" placeholder="0" value="0">
-								<label for="kids">
-									<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-								</label>
-							</div>	
+						<div class="drop-item">
+							<span class="drop-label">Дети</span>
+							<div class="spinner">
+								<i id="second-left" class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+								<input type="text" id="second-input" name="child" value="0" max="10" min="0" readonly="">
+								<i id="second-right" class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+							</div>
 						</div>
 					</div>
 				</div>
