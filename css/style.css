@@ -177,10 +177,6 @@ button {
 	border-color: #f3bf33;
 }
 .reserve-div .quantity {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -204,11 +200,11 @@ button {
 }
 .reserve-div input[type="checkbox"]:checked ~ label:after{
 	display: block;
-    }
+}
 .check label {
 	position: relative;
 	padding-right: 25px;
-    }
+}
 .check label:before {
 	content: "";
 	width: 25px;
@@ -280,7 +276,6 @@ header {
     font-size: 22px;
     font-weight: 700;
     color: #e5be43;
-    /* width: 150px; */
 }
 .logo span {
 	color: #27273f;
@@ -292,10 +287,6 @@ header {
 	display: none;
 }
 .burger-menu {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -360,13 +351,13 @@ h1 {
 	font-size: 24px;
 	margin: 0px;
 }
-.danny-hotel .black #room {
+.danny-hotel .black #roomprice {
 	font-family: Roboto,sans-serif;
 	margin: 20px 0px 20px;
 	font-size: 18px;
 }
-.danny-hotel .black span {	
-	font-weight: 700;
+.danny-hotel .black #roomprice span {	
+	font-family: RobotoBold;
 }
 .danny-hotel .welcome {
 	padding: 25px 40px;
@@ -385,10 +376,6 @@ h1 {
 	text-transform: none;
 }
 .danny-hotel .all-inputs {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -450,10 +437,6 @@ input {
 	margin: 0 auto;
 }
 .traditions {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
 	-webkit-box-pack: justify;
@@ -486,10 +469,6 @@ h3 {
     color: #737379;
 }
 .foto-room {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
 	display: flex;
 	justify-content: space-between;
 	font-size: 16px;
@@ -622,7 +601,6 @@ h2 {
 	align-items: center;
 	flex-wrap: nowrap;
 }
-
 .guests-show {
 	width: 100%;
 }
@@ -673,7 +651,6 @@ h2 {
 	align-items: center;
 	flex-wrap: nowrap;
 }
-
 .coments-title {
 	text-align: center;
     color: #fff;  
@@ -827,7 +804,7 @@ footer {
     width: 40px;
     border-radius: 50%;
     background: #2c2c2c;
-    line-height: 44px;
+    line-height: 48px;
     margin-left: 4px;
     color: #fefefe;
 }

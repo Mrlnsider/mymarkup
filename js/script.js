@@ -70,7 +70,6 @@ open.addEventListener("click", () => {
     hidden.style.display = "none"
     body.classList.remove('noscroll')
 })
-var hidef = document.getElementById('hide-form')
 
 //my slider
 const Slide = function ( imageURL, container ) {
