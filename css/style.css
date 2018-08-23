@@ -195,6 +195,9 @@ button {
 	border: 1px solid #000;
 	border-radius: 6px;
 }
+.reserve-div .quantity input:hover {
+	cursor: default;
+}
 .reserve-div input[type="checkbox"] {
 	margin-left: -16px;
     opacity: 0; 
@@ -227,9 +230,6 @@ button {
 	background-image: url(../img/check.png);
 	background-repeat: no-repeat;
 	background-position: center center;  
-}
-.reserve-div .quantity input:focus {
-	border-color: #f3bf33;
 }
 .reserve-div .div-center {
 	text-align: center;
@@ -901,9 +901,11 @@ footer {
 		display: inline-block;
 		margin-left: 0;
 		margin-bottom: 30px;
+		font-size: 22px;
 	}
 	.menu nav {
 		margin-bottom: 30px;
+		font-size: 22px;
 	}
 	.nav-opener {
 		display: inline-block;
@@ -1058,10 +1060,16 @@ footer {
 		width: 100.6%;
 		padding: 10px;
 	}
+	.drop-item:first-child {
+    	margin-bottom: 10px;
+	}
 	.guests .drop input {
-		width: 15px;
-		text-indent: 4px;
+		width: 30px;
+		text-indent: 12px;
 		margin-bottom: 0px;
+	}
+	.drop i {
+    	font-size: 18px;
 	}
 	.seat.second {
 		width: 100%;

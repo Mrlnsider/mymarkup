@@ -59,10 +59,12 @@ var body = document.body
 open.addEventListener("click", () => {
     hidden.style.display = "inline-block"
     body.classList.add('noscroll')
+    changeGuest ()
 })
  show.addEventListener("click", () => {
     hidden.style.display = "inline-block"
     body.classList.add('noscroll')
+    changeGuest ()
 })
  close.addEventListener("click", () => {
     hidden.style.display = "none"
@@ -255,18 +257,43 @@ var fi = document.querySelector ("#first-input")
 var si = document.querySelector ("#second-input")
 var gn = document.querySelector (".guest-number")
 var gt = document.querySelector (".guest-text")
-var quantity = document.querySelector ("#quantityinp")
 gn.innerHTML = 1
 gt.innerHTML = "гость"
+var quantity = document.querySelector ("#quantityinp")
+var reservePrice = document.querySelector ("#reserve-price")
+reservePrice.innerHTML = "750"
+function changePrice() {
+var chbox
+chbox = document.querySelector ("#vip")
+    if (chbox.checked) {
+        reservePrice.innerHTML = "2500"
+    }
+    else {
+        return changeGuest ()
+    }
+}
 function changeGuest () {
-    if ( Number(fi.value) + Number(si.value) > 1)
+     quantity.value = gn.innerHTML
+    if ( Number(fi.value) + Number(si.value) > 1) {
         gt.innerHTML = gt.innerHTML.replace ( "гость", "гостя" )
-    if ( Number(fi.value) + Number(si.value) > 4 )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "750", "950" )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "2500", "950" )
+    }    
+    if ( Number(fi.value) + Number(si.value) > 4 ) {
         gt.innerHTML = gt.innerHTML.replace ( "гостя", "гостей" )
-    if ( Number(fi.value) + Number(si.value) < 5 )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "950", "1500" )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "2500", "1500" )
+    }    
+    if ( Number(fi.value) + Number(si.value) < 5 ) {
         gt.innerHTML = gt.innerHTML.replace ( "гостей", "гостя" )
-    if ( Number(fi.value) + Number(si.value) < 2 ) 
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "1500", "950" )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "2500", "950" )
+    }
+    if ( Number(fi.value) + Number(si.value) < 2 ) {
         gt.innerHTML = gt.innerHTML.replace ( "гостя", "гость" )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "950", "750" )
+        reservePrice.innerHTML = reservePrice.innerHTML.replace ( "2500", "750" )
+    }
 }
 fl.onclick = function(event) {
     fi.value = Number(fi.value) - 1
@@ -278,7 +305,6 @@ fl.onclick = function(event) {
     if (fi.value < 2)
         fl.style.opacity = ".5"
     gn.innerHTML = Number(fi.value) + Number(si.value)
-    quantity.value = gn.innerHTML
     changeGuest ()
 }
 fr.onclick = function(event) {
@@ -290,7 +316,6 @@ fr.onclick = function(event) {
     if (fi.value > 8)
         fr.style.opacity = ".5"
     gn.innerHTML= Number(fi.value) + Number(si.value)
-    quantity.value = gn.innerHTML
     changeGuest ()
 }
 sl.onclick = function(event) {
@@ -302,7 +327,6 @@ sl.onclick = function(event) {
     if (si.value < 1)
         sl.style.opacity = ".5"
     gn.innerHTML= Number(fi.value) + Number(si.value)
-    quantity.value = gn.innerHTML
     changeGuest ()
 }
 sr.onclick = function(event) {
@@ -314,7 +338,6 @@ sr.onclick = function(event) {
     if (si.value > 4)
         sr.style.opacity = ".5"
     gn.innerHTML= Number(fi.value) + Number(si.value)
-    quantity.value = gn.innerHTML
     changeGuest ()
 }
 
